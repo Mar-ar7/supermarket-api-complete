@@ -14,7 +14,7 @@ import java.util.List;
 public class SaleRequestDTO {
 
     private Long branchId;
-    private List<SaleItemDTO> items; // 👈 aquí está getItems()
+    private List<SaleItemDTO> items;
 
     @Getter
     @Setter

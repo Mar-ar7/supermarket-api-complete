@@ -13,6 +13,6 @@ public class TopProductDTO {
 
     private Long productId;
     private String productName;
-    private Long totalQuantity; // 👈 antes Integer, ahora Long
+    private Long totalQuantity;
 
 }

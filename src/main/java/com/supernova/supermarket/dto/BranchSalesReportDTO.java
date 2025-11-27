@@ -13,7 +13,7 @@ public class BranchSalesReportDTO {
 
     private Long branchId;
     private String branchName;
-    private Long totalSalesCount;   // antes Integer
+    private Long totalSalesCount;
     private Double totalAmount;
 
 }
