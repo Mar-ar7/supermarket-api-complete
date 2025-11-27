@@ -1,0 +1,167 @@
+{
+  "info": {
+    "_postman_id": "cd2a6e76-6fe4-4d10-b2be-b8834e3fa1a1",
+    "name": "Supermarket API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección de endpoints de la API Supermarket (Spring Boot)."
+  },
+  "item": [
+    {
+      "name": "Branches",
+      "item": [
+        {
+          "name": "Create Branch",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Central\",\n  \"address\": \"Zona 1\",\n  \"phone\": \"22334455\",\n  \"branchCode\": \"BR-001\"\n}"
+            },
+            "url": "http://localhost:8080/api/v1/branches/"
+          }
+        },
+        {
+          "name": "Get All Branches",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/branches/"
+          }
+        },
+        {
+          "name": "Get Branch by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/branches/1"
+          }
+        },
+        {
+          "name": "Update Branch",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Actualizada\",\n  \"address\": \"Zona 2\",\n  \"phone\": \"22556677\",\n  \"branchCode\": \"BR-001\"\n}"
+            },
+            "url": "http://localhost:8080/api/v1/branches/1"
+          }
+        },
+        {
+          "name": "Delete Branch",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/api/v1/branches/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Leche\",\n  \"category\": \"Lácteos\",\n  \"price\": 10.50,\n  \"barcode\": \"ML001\"\n}"
+            },
+            "url": "http://localhost:8080/api/v1/products/"
+          }
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/products/"
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/products/1"
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Leche Entera\",\n  \"category\": \"Lácteos\",\n  \"price\": 11.25,\n  \"barcode\": \"ML001\"\n}"
+            },
+            "url": "http://localhost:8080/api/v1/products/1"
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/api/v1/products/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Create Sale",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"branchId\": 1,\n  \"items\": [\n    { \"productId\": 1, \"quantity\": 3 }\n  ]\n}"
+            },
+            "url": "http://localhost:8080/api/v1/sales/"
+          }
+        },
+        {
+          "name": "Get All Sales",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/sales/"
+          }
+        },
+        {
+          "name": "Get Sale by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/sales/1"
+          }
+        },
+        {
+          "name": "Get Sales by Branch",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/sales/branch/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Branch Sales Report",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/reports/branch-sales?branch_id=1&start=2024-01-01&end=2024-12-31"
+          }
+        },
+        {
+          "name": "Top Products",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/api/v1/reports/top-products?limit=5"
+          }
+        }
+      ]
+    }
+  ]
+}
